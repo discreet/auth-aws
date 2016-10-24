@@ -63,7 +63,7 @@ func (ac *AdfsClient) loadSettingsFile(settingsFile io.Reader) {
 
 	cfg, err := ini.Load(b)
 	if err == nil {
-		err = cfg.Section("adfs").MapTo(ac)
+		err = cfg.Section("default").MapTo(ac)
 		checkError(err)
 	}
 }

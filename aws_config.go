@@ -18,10 +18,10 @@ func SaveAwsCredentials(awsCredentials *AwsCredentials) {
 
 	creds.NameMapper = ini.TitleUnderscore
 
-	adfs, err := creds.GetSection("adfs")
+	adfs, err := creds.GetSection("default")
 
 	if err != nil {
-		adfs, err = creds.NewSection("adfs")
+		adfs, err = creds.NewSection("default")
 		if err != nil {
 			fmt.Println(err)
 		}
